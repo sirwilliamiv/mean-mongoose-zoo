@@ -7,5 +7,13 @@ app.config(['$routeProvider', function($routeProvider){
       .when('/', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
+      }).when('/add', {
+        templateUrl: 'partials/addAnimals.html',
+        controller: 'AddAnimalCtrl'
+      }).when('/zoo', {
+        templateUrl: 'partials/zoo.html',
+        controller: 'ZooCtrl'
+      }).otherwise({
+        redirectTo: '/'
       })
 }])
