@@ -6,5 +6,14 @@
 
 <h2>Look at all these animals you have!</h2>
 <ul>
-  <li ng-repeat="animal in animals">{{ animal.name }} is a {{animal.age}} year old {{animal.species}} <input type="button" value="remove this animal" ng-click="remove(animal._id)"></li>
+  <li ng-repeat="animal in animals">{{ animal.name }} is a {{animal.age}} year old {{animal.species}} 
+    <input type="button" value="remove" ng-click="remove(animal._id)">
+    <input type="button" value="edit" ng-click="editing = !editing">
+    <div ng-if="editing">
+      <input type="text" ng-model="animal.name">
+      <input type="text" ng-model="animal.species">
+      <input type="text" ng-model="animal.age">
+      <input type="button" value="save" ng-click="save(animal._id, animal)">
+    </div>
+  </li>
 </ul>

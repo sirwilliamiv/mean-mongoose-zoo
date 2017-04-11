@@ -1,5 +1,7 @@
 app.controller('ZooCtrl', function($scope, AnimalFact){
 
+$scope.editing = false
+
 const popPage = () =>{
   AnimalFact.getAll()
     .then((animals) => {
@@ -10,10 +12,19 @@ const popPage = () =>{
 
 popPage()
 
-  $scope.remove = (id) =>{
-    AnimalFact.remove(id)
+$scope.remove = (id) => {
+  AnimalFact.remove(id)
+  popPage()
+}
+
+$scope.save = (id, updateInfo) => {
+  console.log("updateInfo", updateInfo)
+  AnimalFact.update(id, updateInfo)
+  .then(() => {
+    editing = false;
     popPage()
-  }
+  })
+}
 
 
 })
