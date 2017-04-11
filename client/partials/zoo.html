@@ -6,5 +6,5 @@
 
 <h2>Look at all these animals you have!</h2>
 <ul>
-  <li ng-repeat="animal in animals">{{animal.name}}</li>
+  <li ng-repeat="animal in animals">{{ animal.name }} is a {{animal.age}} year old {{animal.species}} <input type="button" value="remove this animal" ng-click="remove(animal._id)"></li>
 </ul>

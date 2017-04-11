@@ -2,11 +2,12 @@
 
 <div>
   <label for="name">Name</label>
-  <input type="text" ng-model="name" placeholder="Francine" name="name">  
+  <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">  
   <label for="species">Species</label>
-  <input type="text" ng-model="name" placeholder="Penguin" name="species">
+  <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
   <label for="age">Age</label>
-  <input type="number" ng-model="age" placeholder="3" name="age">
+  <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
+  <input type="button" value="add animal" ng-click="add()">
 </div>
 
 <a href="/#!/zoo"><input type="button" value="look at your zoo"></a>
