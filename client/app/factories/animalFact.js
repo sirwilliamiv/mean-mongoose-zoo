@@ -3,7 +3,7 @@ app.factory('AnimalFact', function($http) {
   return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`/api/allAnimals`)
+          $http.get(`http://localhost:3000/api/allAnimals`)
             .then((data) => {
               resolve(data.data)
             })
@@ -11,7 +11,7 @@ app.factory('AnimalFact', function($http) {
       },
     add: function(newAnimal) {
       return new Promise((resolve, reject) =>{
-        $http.post(`/api/addAnimal`, newAnimal)
+        $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
           .then((data) => {
             resolve(data.data.animals)
           })
@@ -20,7 +20,7 @@ app.factory('AnimalFact', function($http) {
 
     remove: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`/api/removeAnimal/${id}`)
+        $http.delete(`http://localhost:3000/api/removeAnimal/${id}`)
           .then((data) => {
             //console.log("you deleted", data)
           })
