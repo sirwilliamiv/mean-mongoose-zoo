@@ -18,7 +18,6 @@ $scope.remove = (id) => {
 }
 
 $scope.save = (id, updateInfo) => {
-  console.log("updateInfo", updateInfo)
   AnimalFact.update(id, updateInfo)
   .then(() => {
     editing = false;
