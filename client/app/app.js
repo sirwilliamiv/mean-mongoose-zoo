@@ -11,6 +11,9 @@ app.config(['$routeProvider', function($routeProvider){
       }).when('/zoo', {
         templateUrl: 'partials/zoo.html',
         controller: 'ZooCtrl'
+      }).when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
       }).otherwise({
         redirectTo: '/'
       })
