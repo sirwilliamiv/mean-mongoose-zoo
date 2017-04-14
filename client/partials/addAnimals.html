@@ -1,14 +1,30 @@
 <h1>Add Animals Here</h1>
 
-<div>
-  <label for="name">Name</label>
-  <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">  
-  <label for="species">Species</label>
-  <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
-  <label for="age">Age</label>
-  <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
-  <input type="button" value="add animal" ng-click="add()">
-</div>
+<fieldset>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">  
+    <label for="species">Species</label>
+    <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
+    <label for="age">Age</label>
+    <input type="number" ng-model="newAnimal.age" placeholder="3" name="age"><label for="zookeeper">Zookeeper</label>
+    <input type="text" ng-model="newAnimal.zookeeper" placeholder="Dora" name="zookeeper">
+    <input type="button" value="add animal" ng-click="addAnimal()">
+  </div>
+</fieldset>
+
+<fieldset>
+  <div>
+    <label for="name">zookeeper name</label>
+    <input type="text" ng-model="newZookeeper.name" placeholder="Suzie">
+    <label for="avaialable animals">For which animals will this zookeeper care?</label>
+    <div ng-repeat="animal in animals">
+      <input type="checkbox" name={{animal.name}} value={{animal.name}} ng-model="animal.checked">
+      <label for={{animal.name}}>{{animal.name}}</label>
+    </div>
+    <input type="button" value="add zookeeper" ng-click="addZookeeper()">
+  </div>
+</fieldset>
 
 <a href="/#!/zoo"><input type="button" value="look at your zoo"></a>
 <a href="/#!/"><input type="button" value="home"></a>
