@@ -9,6 +9,10 @@
     <label for="age">Age</label>
     <input type="number" ng-model="newAnimal.age" placeholder="3" name="age"><label for="zookeeper">Zookeeper</label>
     <input type="text" ng-model="newAnimal.zookeeper" placeholder="Dora" name="zookeeper">
+    <div ng-repeat="zookeeper in zookeepers">
+      <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
+      <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
+    </div>
     <input type="button" value="add animal" ng-click="addAnimal()">
   </div>
 </fieldset>

@@ -13,7 +13,7 @@ app.factory('AnimalFact', function($http) {
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
           .then((data) => {
-            resolve(data.data.animals)
+            resolve(data)
           })
         })
     },
