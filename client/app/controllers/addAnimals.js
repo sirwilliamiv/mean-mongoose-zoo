@@ -28,6 +28,7 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
       }
     }
     console.log("checked zookeepers", selectedzookeepers)
+    $scope.newAnimal.zookeepers = selectedzookeepers;
     AnimalFact.add($scope.newAnimal)
     .then((data) => {})
     $scope.newAnimal = {}
