@@ -7,7 +7,11 @@
 <h2>Look at all these animals you have!</h2>
 <ul>
   <li ng-repeat="animal in animals">{{ animal.name }} is a {{animal.age}} year old {{animal.species}} cared for by 
-    <span ng-repeat="zookeeper in animal.zookeepers">{{zookeeper}}
+    <span ng-if="animal.zookeepers.length === 0"> 
+      no one
+    </span>
+    <span ng-repeat="zookeeper in animal.zookeepers">
+      {{zookeeper}}
     </span>
     <input type="button" value="remove" ng-click="remove(animal._id)">
     <input type="button" value="edit" ng-click="editing = !editing">
