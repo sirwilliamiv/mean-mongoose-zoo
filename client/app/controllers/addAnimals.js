@@ -24,7 +24,7 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
     let selectedzookeepers = [];
     for (var i = 0; i < $scope.zookeepers.length; i++) {
       if($scope.zookeepers[i].checked){
-        selectedzookeepers.push($scope.zookeepers[i]._id)
+        selectedzookeepers.push($scope.zookeepers[i])
       }
     }
     console.log("checked zookeepers", selectedzookeepers)

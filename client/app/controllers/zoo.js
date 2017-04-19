@@ -14,13 +14,16 @@ popPage()
 
 $scope.remove = (id) => {
   AnimalFact.remove(id)
-  popPage()
+  .then(() => {
+    popPage()
+  })
 }
 
 $scope.save = (id, updateInfo) => {
   AnimalFact.update(id, updateInfo)
   .then(() => {
-    editing = false;
+    console.log("updated!!")
+    $scope.editing = false;
     popPage()
   })
 }
