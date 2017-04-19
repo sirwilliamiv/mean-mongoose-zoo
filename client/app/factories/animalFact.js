@@ -13,7 +13,7 @@ app.factory('AnimalFact', function($http) {
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
           .then((data) => {
-            resolve(data.data.animals)
+            resolve(data)
           })
         })
     },
@@ -28,11 +28,10 @@ app.factory('AnimalFact', function($http) {
     },
 
     update: (id, updateInfo) => {
-      console.log("id that made it to the factory", id)
       return new Promise((resolve, reject) => {
         $http.patch(`http://localhost:3000/api/updateAnimal/${id}`, updateInfo)
         .then((data) => {
-          console.log("animal updated", data)
+          //console.log("animal updated", data)
         })
         .catch((err) => console.log("err:", err))
       })
