@@ -22,7 +22,7 @@ app.factory('AnimalFact', function($http) {
       return new Promise((resolve,reject) => {
         $http.delete(`http://localhost:3000/api/removeAnimal/${id}`)
           .then((data) => {
-            //console.log("you deleted", data)
+            resolve()
           })
       })
     },
@@ -31,7 +31,7 @@ app.factory('AnimalFact', function($http) {
       return new Promise((resolve, reject) => {
         $http.patch(`http://localhost:3000/api/updateAnimal/${id}`, updateInfo)
         .then((data) => {
-          //console.log("animal updated", data)
+          resolve()
         })
         .catch((err) => console.log("err:", err))
       })

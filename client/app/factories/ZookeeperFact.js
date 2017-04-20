@@ -17,6 +17,14 @@ app.factory('ZookeeperFact', function($http){
             resolve(data.data.zookeepers)
           })
         })
+    },
+    delete: function(id) {
+      return new Promise((resolve, reject) => {
+        $http.delete(`http://localhost:3000/api/zookeeper/${id}`)
+          .then((data) => {
+            resolve()
+          })
+      })
     }
   }
 })
