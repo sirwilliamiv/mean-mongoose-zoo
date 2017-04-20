@@ -11,7 +11,28 @@ body {
 }
 
 .animalPic {
-  /*max-height: 70px;*/
   width: 90%;
   margin: 5%;
 }
+
+.titlePic {
+  width: 275px;
+  display: inline;
+}
+
+#title {
+  display: inline;
+  font-size: 5em;
+  margin: auto;
+}
+
+.deleteZookeeperButton{
+  display: inline;
+}
+
+.zookeeperDeleteName {
+  display: inline;
+}
+
+
+
