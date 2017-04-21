@@ -13,7 +13,7 @@
       no one
     </span>
     <span ng-repeat="zookeeper in animal.zookeepers">
-      {{zookeeper.name}}
+      {{$last? ' and ' : ''}}{{zookeeper.name}}{{$last? '.' : ', '}}
     </span>
     <div>
       <input type="button" value="remove" ng-click="remove(animal._id)">
