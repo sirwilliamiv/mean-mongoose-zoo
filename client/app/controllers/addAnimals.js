@@ -41,8 +41,8 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
   $scope.addZookeeper = () => {
     ZookeeperFact.add($scope.newZookeeper)
     .then(() => { 
-      $scope.newZookeeper = {}
       $scope.zookeepers.push($scope.newZookeeper)
+      $scope.newZookeeper = {}
       $scope.$apply()
     })
   }
