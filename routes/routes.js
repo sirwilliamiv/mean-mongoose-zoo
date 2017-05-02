@@ -32,8 +32,8 @@ router.post('/addAnimal', (req, res, next) => {
 })
 
 router.patch('/updateAnimal/:id', (req, res, next) => {
-  console.log("patch id", id)
-  Animal.update(id, req.body, { upsert: true }, (err, doc) => {
+  // console.log("patch id", id)
+  Animal.update(req.params.id, req.body, { upsert: true }, (err, doc) => {
 
     if (err) return res.send(500, { error: err });
     return res.status(200).send("succesfully saved yo Animal!");
